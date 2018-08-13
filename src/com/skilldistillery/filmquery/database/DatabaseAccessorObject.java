@@ -208,16 +208,13 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 
 			String sql = "SELECT id, title, description, release_year, language_id, rental_duration, ";
 			sql += " rental_rate, length, replacement_cost, rating, special_features"
-					+ " FROM film WHERE title like '%dino%'" + " OR description like '%dino%'";
+					+ " FROM film WHERE title like '%?%'" + " OR description like '%?%'";
 
 			PreparedStatement stmt = conn.prepareStatement(sql);
-			
-			System.out.println("Statement :  " + stmt);
-			
+						
 //			stmt.setString(1, searchTerm);
 //			stmt.setString(2, searchTerm);
 			ResultSet rs = stmt.executeQuery();
-			System.out.println("size of the result set : " + rs.getFetchSize());
 			if (rs.next()) {
 				Film film = new Film();
 				film.setFilmId(rs.getInt(1));
