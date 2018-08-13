@@ -7,19 +7,27 @@ public class Actor {
 	  private String firstName;
 	  private String lastName;
 	  private List<Film> films;
-	  /* ... */
+	  
+	  public Actor(int id, String firstName, String lastName) {
+		
+	}
+	  
+	  public Actor() {
+		  
+	  }
+	/* ... */
 	public int getId() {
 		return id;
 	}
 	@Override
 	public String toString() {
-		return "Actor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", films=" + films + "]";
+		return "Actor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((films == null) ? 0 : films.hashCode());
+//		result = prime * result + ((films == null) ? 0 : films.hashCode());
 		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
@@ -68,10 +76,10 @@ public class Actor {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public List<Film> getFilms() {
-		return films;
-	}
-	public void setFilms(List<Film> films) {
-		this.films = films;
-	}
+//	public List<Film> getFilms() {
+//		return films;
+//	}
+//	public void setFilms(List<Film> films) {
+//		this.films = films;
+//	}
 	}
